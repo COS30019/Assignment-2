@@ -49,6 +49,6 @@ class Graph:
         return adjacent
     
 def dfs(graph):
-
+def gbfs(graph):
 def main():
         
