@@ -48,7 +48,6 @@ class Graph:
         adjacent.sort()
         return adjacent
     
-def dfs(graph):
-def gbfs(graph):
+
 def main():
         
