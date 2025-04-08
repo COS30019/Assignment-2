@@ -52,25 +52,3 @@ def dfs(graph):
 
 def main():
         
-# ------------------------
-# A* Search
-# ------------------------
-def astar(nodes, edges, origin, goals):
-    frontier = [(h(nodes, origin, goals), origin, [origin], 0)]
-    explored = set()
-    created = 1
-    while frontier:
-        f, node, path, g = heapq.heappop(frontier)
-        if node in goals:
-            return node, created, path
-        explored.add(node)
-        for neighbor, cost in edges.get(node, []):
-            if neighbor not in explored:
-                g_new = g + cost
-                f_new = g_new + h(nodes, neighbor, goals)
-                heapq.heappush(frontier, (f_new, neighbor, path + [neighbor], g_new))
-                created += 1
-    return None, created, []
-
-
-
