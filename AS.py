@@ -2,9 +2,8 @@ import heapq
 import math
 import sys
 
-# ------------------------
+
 # Input Parser
-# ------------------------
 def parse_input_file(filepath):
     nodes, edges = {}, {}
     origin, destinations = None, []
@@ -44,18 +43,16 @@ def parse_input_file(filepath):
 
     return nodes, edges, origin, destinations
 
-# ------------------------
+
 # Heuristic
-# ------------------------
 def euclidean(a, b):
     return math.sqrt((a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2)
 
 def h(nodes, current, goals):
     return min(euclidean(nodes[current], nodes[goal]) for goal in goals)
 
-# ------------------------
+
 # A* Search
-# ------------------------
 def astar(nodes, edges, origin, goals):
     frontier = [(h(nodes, origin, goals), origin, [origin], 0)]
     explored = set()
@@ -74,9 +71,7 @@ def astar(nodes, edges, origin, goals):
     return None, created, []
 
 
-# ------------------------
 # Main Runner
-# ------------------------
 def run(filename, method):
     nodes, edges, origin, goals = parse_input_file(filename)
     methods = {
