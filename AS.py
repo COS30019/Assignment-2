@@ -73,24 +73,6 @@ def astar(nodes, edges, origin, goals):
                 created += 1
     return None, created, []
 
-# ------------------------
-# CUS2: Weighted Greedy Search
-# ------------------------
-def cus2(nodes, edges, origin, goals):
-    frontier = [(0, origin, [origin])]
-    explored = set()
-    created = 1
-    while frontier:
-        f, node, path = heapq.heappop(frontier)
-        if node in goals:
-            return node, created, path
-        explored.add(node)
-        for neighbor, _ in edges.get(node, []):
-            if neighbor not in explored:
-                f_new = h(nodes, neighbor, goals) + len(path) * 0.5
-                heapq.heappush(frontier, (f_new, neighbor, path + [neighbor]))
-                created += 1
-    return None, created, []
 
 # ------------------------
 # Main Runner
