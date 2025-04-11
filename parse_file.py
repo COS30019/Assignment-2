@@ -1,6 +1,6 @@
 import sys
 
-def parse_file(filename):
+def populate_graph(filename):
     nodes = {}
     edges = {}
     origin = None
