@@ -1,4 +1,4 @@
-
+from parse_file.py import adjust
 
 def bfs(nodes, edges, origin, destinations):
     frontier = deque()
