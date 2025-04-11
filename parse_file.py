@@ -34,7 +34,7 @@ def populate_graph(filename):
             elif mode == "edges":
                 edge, cost = line.split(":")
                 start, end = map(int, edge.strip()[1:-1].split(','))
-                edges[(start, end)] = int(cost)
+                edges[(start, end)] = float(cost)
             elif mode == "origin":
                 origin = int(line)
             elif mode == "destinations":
