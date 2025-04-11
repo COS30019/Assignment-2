@@ -1,5 +1,5 @@
 import heapq
-from parse_file import compute_heuristic, find_adjacent,
+from parse_file import compute_heuristic, find_adjacent
 
 def astar(nodes, edges, origin, destinations):
     frontier = []
