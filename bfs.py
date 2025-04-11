@@ -1,4 +1,4 @@
-from parse_file.py import adjust
+from parse_file import find_adjacent
 
 def bfs(nodes, edges, origin, destinations):
     frontier = deque()
