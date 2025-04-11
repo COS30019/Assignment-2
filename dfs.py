@@ -1,4 +1,3 @@
-import sys
 from parse_file import find_adjacent
 
 def dfs(nodes, edges, origin, destinations):
