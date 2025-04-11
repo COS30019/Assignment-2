@@ -1,5 +1,5 @@
 import sys
-from parse_file import populate_graph, find_adjacent
+from parse_file import find_adjacent
 
 def dfs(nodes, edges, origin, destinations):
     nodes_visited = set()
