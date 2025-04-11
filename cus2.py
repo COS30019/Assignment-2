@@ -20,8 +20,8 @@ def cus2(nodes, edges, origin, destinations):
         for neighbor, _ in find_adjacent(current, edges):
             if neighbor not in visited:
                 new_depth = depth + 1
-                f_new = compute_heuristic(nodes, neighbor, destinations) + new_depth * 0.5
-                heapq.heappush(frontier, (f_new, neighbor, path + [neighbor], new_depth))
+                f_new = compute_heuristic(nodes, adjacent_node, destinations) + new_depth * 0.5
+                heapq.heappush(frontier, (f_new, adjacent_node, path + [adjacent_node], new_depth))
                 created += 1
 
     return None, created, []
