@@ -3,7 +3,7 @@ from parse_file import compute_heuristic, find_adjacent,
 
 def astar(nodes, edges, origin, destinations):
     frontier = []
-    heapq.heappush(frontier, (0 + compute_heuristic(nodes, origin, destinations)
+    heapq.heappush(frontier, (0 + compute_heuristic(nodes, origin, destinations)))
     visited = set()
     created = 1
            
