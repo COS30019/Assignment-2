@@ -14,7 +14,7 @@ def astar(nodes, edges, origin, destinations):
         
         if current in visited:
              continue
-         visited.add(current)
+        visited.add(current)
         
         for adjacent_node, cost in find_adjacent(current, edges):
             if adjacent_node not in visited:
