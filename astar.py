@@ -10,7 +10,7 @@ def astar(nodes, edges, origin, destinations):
     while frontier:
         f, current, path, g = heapq.heappop(frontier)
 
-        if current in destinations
+        if current in destinations:
            return current, created, path
                          
         if current in visited:
