@@ -1,5 +1,6 @@
 import sys
 import math
+import heapq
 
 def populate_graph(filename):
     nodes = {}
