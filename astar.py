@@ -1,27 +1,21 @@
 import heapq
-from parse_file import compute_heuristic, find_adjacent
+from parse_file import find_adjacent, compute_heuristic
 
-def astar(nodes, edges, origin, destinations):
-    frontier = []
-    heapq.heappush(frontier, (0 + compute_heuristic(nodes, origin, destinations), origin, [origin], 0))
-    visited = set()
+def astar(nodes, edges, origin, goals):
+    frontier = [(compute_heuristic(nodes, origin, goals), origin, [origin], 0)]
+    explored = set()
     created = 1
-
     while frontier:
-        f, current, path, g = heapq.heappop(frontier)
+        f, node, path, g = heapq.heappop(frontier)
+        if node in goals:
+            return node, created, path
+        explored.add(node)
 
-        if current in destinations:
-            return current, created, path
-
-        if current in visited:
-            continue
-        visited.add(current)
-
-        for neighbor, cost in find_adjacent(current, edges):
-            if neighbor not in visited:
+        adjacent = find_adjacent(node, edges)
+        for adjacent_node, cost in adjacent:
+            if adjacent_node not in explored:
                 g_new = g + cost
-                f_new = g_new + compute_heuristic(nodes, neighbor, destinations)
-                heapq.heappush(frontier, (f_new, neighbor, path + [neighbor], g_new))
+                f_new = g_new + compute_heuristic(nodes, adjacent_node, goals)
+                heapq.heappush(frontier, (f_new, adjacent_node, path + [adjacent_node], g_new))
                 created += 1
-
     return None, created, []
