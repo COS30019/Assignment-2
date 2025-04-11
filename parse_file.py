@@ -1,4 +1,5 @@
 import sys
+import math
 
 def populate_graph(filename):
     nodes = {}
@@ -49,5 +50,10 @@ def find_adjacent(node_id, edges):
     adjacent.sort()
     
     return adjacent
-    
+
+def euclidean(a, b):
+    return math.sqrt((a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2)
+
+def compute_heuristic(nodes, current, goals):
+    return min(euclidean(nodes[current], nodes[goal]) for goal in goals)
         
