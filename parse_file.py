@@ -12,7 +12,7 @@ def parse_file(filename):
             line = line.strip()
             if not line:
                 continue
-            if line.startswith("Nodes"):
+            if line.startswith("Nodes:"):
                 mode = "nodes"
                 continue
             elif line.startswith("Edges:"):
@@ -37,7 +37,7 @@ def parse_file(filename):
             elif mode == "origin":
                 origin = int(line)
             elif mode == "destinations":
-                destinations = [int(destination.strip) for destination in line.split(';')]
+                destinations = [int(destination.strip()) for destination in line.split(';')]
                 
     return nodes, edges, origin, destinations
         
