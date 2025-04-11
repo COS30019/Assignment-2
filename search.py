@@ -1,4 +1,5 @@
 import sys
+from parse_file import populate_graph
 from dfs import dfs
 from bfs import bfs
 from gbfs import gbfs
@@ -14,6 +15,8 @@ def search():
     filename = sys.argv[1]
     method = sys.argv[2].lower()
 
+    nodes, edges, origin, destinations = populate_graph(filename)
+
     methods = {
         "dfs": dfs,
         "bfs": bfs,
@@ -28,7 +31,7 @@ def search():
         sys.exit()
 
     selected_method = methods[method]
-    goal, nodes_created, path = selected_method(filename, method)
+    goal, nodes_created, path = selected_method(nodes, edges, origin, destinations)
 
     if goal:
         print('{} {}'.format(filename, method))
