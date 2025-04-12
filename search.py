@@ -5,7 +5,7 @@ from bfs import bfs
 from gbfs import gbfs
 from astar import astar
 from cus1 import cus1
-from cus2 import cus2
+from bs import bs
 
 def search():
     if len(sys.argv) != 3:
@@ -23,7 +23,7 @@ def search():
         "gbfs": gbfs,
         "as": astar,
         "cus1": cus1,
-        "cus2": cus2
+        "bs": bs
     }
 
     if method not in methods:
