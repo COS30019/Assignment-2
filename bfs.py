@@ -15,7 +15,6 @@ def bfs(nodes, edges, origin, destinations):
 
         if current_node not in visited:
             visited.add(current_node)
-
             neighbors = [(end, cost) for (start, end), cost in edges.items() if start == current_node]
             neighbors.sort()
 
