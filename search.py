@@ -4,7 +4,7 @@ from dfs import dfs
 from bfs import bfs
 from gbfs import gbfs
 from astar import astar
-from dls import dls
+from dls import cus1
 from bs import bs
 
 def search():
@@ -22,7 +22,7 @@ def search():
         "bfs": bfs,
         "gbfs": gbfs,
         "as": astar,
-        "dls": dls,
+        "cus1": cus1,
         "bs": bs
     }
 
