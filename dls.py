@@ -1,3 +1,8 @@
+def cus1(nodes, edges,orgin, destination):
+    limit=5 #can limit the node lvl as u nned
+    explored=set()
+    return dls(orgin,set(destination), edges, [orgin], explored, limit, 1)
+
 def dls (node,goal,edges,path,explored,limit,count):
     if node in goal:
         return node, count, path
@@ -17,7 +22,4 @@ def dls (node,goal,edges,path,explored,limit,count):
     explored.remove(node)
     return None,count,[]
 
-def cus1(nodes, edges,orgin, destination):
-    limit=5 #can limit the node lvl as u nned
-    explored=set()
-    return dls(orgin,set(destination), edges, [orgin], explored, limit, 1)
+
