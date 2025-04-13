@@ -11,6 +11,7 @@ def gbfs(nodes, edges, origin, destinations):
 
     while frontier:
         h, node, route = heapq.heappop(frontier)
+        
         if node in destinations:
             return node, created, route
 
