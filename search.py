@@ -22,7 +22,7 @@ def search():
         "bfs": bfs,
         "gbfs": gbfs,
         "as": astar,
-        "cus1": cus1,
+        "dls": cus1,
         "bs": bs
     }
 
