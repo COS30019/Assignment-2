@@ -12,6 +12,7 @@ site_df = site_df.sort_values(by='Timestamp').reset_index(drop=True)
 
 xgb_df = site_df[['Timestamp', 'Volume']].copy()
 
+# Scale values to range 0 - 1.
 scaler = MinMaxScaler()
 xgb_df['Volume_scaled'] = scaler.fit_transform(xgb_df[['Volume']])
 
