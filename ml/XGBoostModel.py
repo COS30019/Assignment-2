@@ -29,6 +29,7 @@ xgb_df = xgb_df.dropna().reset_index(drop=True)
 x = xgb_df.drop(['Timestamp', 'Volume', 'Volume_scaled'], axis = 1)
 y = xgb_df['Volume_scaled']
 
+# 80/20 training/testing split.
 split = int(0.8 * len(x))
 x_train, x_test = x[:split], x[split:]
 y_train, y_test = y[:split], y[split:]
