@@ -35,9 +35,9 @@ x_train, x_test = x[:split], x[split:]
 y_train, y_test = y[:split], y[split:]
 
 model = xgb.XGBRegressor(
-    n_estimators=100,
+    n_estimators=100, # Number of gradient boosted trees.
     learning_rate=0.1,
-    max_depth=5,
+    max_depth=5,      # Max tree depth for base learners.
     gamma=0,
     subsample=0.8,
     colsample_bytree=0.8,
